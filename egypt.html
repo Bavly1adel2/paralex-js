@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        :root{
+            --main-color:#e6c292;
+        }
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        @font-face {
+            font-family: Pegypta;
+            src: url(Pegypta.ttf) format('truetype')
+        }
+        @font-face {
+            font-family: Lms Egyptian Bookends;
+            src: url(LMS Egyptian Bookends.ttf);
+        }
+        @font-face {
+            font-family:Candy Cane Personal Use Regular ;
+            src: url(Candy Cane Personal Use.ttf);
+        }
+        header{
+            position: absolute;
+            left: 0;
+            top: 0;
+            padding: 40px 130px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            z-index: 9999;
+        }
+        header .logo{
+            font-family:Lms Arial, Helvetica, sans-serif ;
+            font-size: 30px;
+            font-weight: bold;
+            color: var(--main-color);
+            margin-left: 20px;
+        }
+
+        header nav ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+        }
+        header nav ul li{
+            margin-left: 15px;
+            font-size: 17px;
+
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+        header nav ul li a{
+            text-decoration: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+        }
+        header nav ul li a.login{
+            background-color: var(--main-color);
+        }
+        header nav ul li a:hover:not(.login){
+            color: var(--main-color);
+
+        }
+        header nav ul li a.login:hover {
+            background-color: #e0ac67;
+        }
+        .section1{
+            background: linear-gradient(#289eff,#41bdff,#4eccff,#64e1ff,#bfdefe);
+            min-height: 100vh;
+            position: relative;
+        }
+        .section1 .pytext{
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 100px;
+            color: var(--main-color);
+        }
+        .section1 .pytext span{
+            font-family:Candy Cane Personal Use Regular;
+            font-weight: bold;
+            font-size: 30px;
+            letter-spacing: 5px;
+            color: white;
+        }
+        .section1 .pytext span.pyramids{
+            float: right;
+        }
+        .section1 .pytext p{
+            background-image: url(https://i.postimg.cc/25HNmtkC/3-camels.jpg);
+            background-repeat: no-repeat;
+            background-size: 945px;
+            background-position-x: -10px;
+            background-position-y: -523px;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 140px;
+            font-family: Pegypta;
+            color: transparent;
+        }
+        .section1 img{
+            position: absolute;
+            object-fit: cover;
+
+        }
+        .section1 img.pyramid{
+            width: 100%;
+            left: 0;
+            bottom: -248px;
+            height: 74%;
+            z-index: 1;
+        }
+        .section1 img.sun{
+            left: 130px;
+            top: 104px;
+            width: 143px;
+            z-index: 5;
+        }
+        .section1 img.sunref1{
+            left: 31px;
+            top: 20px;
+            width: 143px;
+            z-index: 1;
+        }
+        .section1 img.sunref2{
+            left: 213px;
+            top: 184px;
+            width: 143px;
+            z-index: 1;
+        }
+        .section1 img.cloud1{
+            right: 53px;
+            top: 142px;
+            width: 340px;
+            mix-blend-mode: lighten;
+        }
+        .section1 img.cloud2{
+            left: 120px;
+            top: 292px;
+            width: 316px;
+            mix-blend-mode: lighten;
+        }
+
+        .section2{
+            background: linear-gradient(#91280b,#8d3511,#8e3411,#8d3511,#8b3210,#86300f,#933d1a,#923b1a,#7a240d,#660f08);
+            position: relative;
+            min-height: 100vh;
+            top: 246px;
+
+        }
+        .section2 .floor{
+            position: absolute;
+            height: 506px;
+            width: 100%;
+            bottom: -80px;
+        }
+        .section2 .amood1{
+            position: absolute;
+            height: 506px;
+            bottom: 117px;
+            right: 33px;
+        }
+        .section2 .amood2{
+            position: absolute;
+            height: 506px;
+            bottom: 117px;
+            left: 31px;
+            z-index: 1;
+
+        }
+        .section2 .fire{
+            position: absolute;
+            height: 183px;
+            bottom: 119px;
+            left: 202px;
+
+        }
+        .section2 .bardy{
+            position: absolute;
+            height: 124px;
+            bottom: 246px;
+            left: 106px;
+            z-index: 0;
+
+        }
+        .section2 .wall1{
+            position: absolute;
+            height: 593px;
+            bottom: 161px;
+            opacity: .05;
+            left: -12px;
+            width: 100%;
+            z-index: 0;
+
+        }
+        .section2 img.mummy{
+            position: absolute;
+            bottom: -77px;
+            left: 50%;
+            width: 130px;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+        .section2 .taboot{
+            position: absolute;
+            bottom: -77px;
+            left: 50%;
+            width: 130px;
+            transform: translateX(-65px);
+            z-index: 1;
+            transition: all 0.3s ;
+        }
+        .section2 .sca1{
+            position: absolute;
+            bottom: 57px;
+            left: 720px;
+            transform: rotate(96deg);
+            width: 30px;
+            z-index: 0;
+        }
+        .section2 .sca2{
+            position: absolute;
+            bottom: 57px;
+            left: 720px;
+            transform: rotate(60deg);
+            width: 30px;
+            z-index: 0;
+        }
+        .section2 .sca3{
+            position: absolute;
+            bottom: 57px;
+            left: 720px;
+            transform: rotate(128deg);
+            width: 30px;
+            z-index: 0;
+        }
+        .section2 .sca4{
+            position: absolute;
+            bottom: 57px;
+            left: 720px;
+            transform: rotate(-89deg);
+            width: 30px;
+            z-index: 0;
+        }
+        .section2 .sca5{
+            position: absolute;
+            bottom: 57px;
+            left: 720px;
+            transform: rotate(110deg);
+            width: 30px;
+            z-index: 0;
+        }
+        .section2 .sca6{
+            position: absolute;
+            bottom: 57px;
+            left: 720px;
+            transform: rotate(120deg);
+            width: 30px;
+            z-index: 0;
+        }
+        .section2 .sca7{
+            position: absolute;
+            bottom: 57px;
+            left: 720px;
+            transform: rotate(20deg);
+            width: 30px;
+            z-index: 0;
+        }
+
+        #insicts{
+            transition: all 0.5s linear;
+        }
+        .section2 .mummytext {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: -335px;
+            color: var(--main-color);
+            z-index: 0;
+        }
+
+        .section2 .mummytext span {
+            font-family: Candy Cane Personal Use Regular;
+            font-weight: bold;
+            font-size: 30px;
+            letter-spacing: 5px;
+            color: #fed058;
+        }
+
+        .section2 .mummytext span.mummy {
+            float: right;
+        }
+
+        .section2 .mummytext p {
+            background-image: url(https://i.postimg.cc/kG6j014Y/mummy-backgr.jpg);
+            background-repeat: no-repeat;
+            background-size: 402px;
+            background-position-x: 1px;
+            background-position-y: -156px;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 140px;
+            font-family: Pegypta;
+            color: transparent;
+        }
+        .section3{
+            position: relative;
+            padding: 40px 100px;
+            min-height: 100vh;
+            background-color: rgb(15, 9, 50);
+            color: white;
+            bottom: -326px;
+        }
+        .section3 p{
+            font-size: 20px;
+            line-height: 2;
+        }
+    </style>
+</head>
+<body><header>
+    <div class="logo">Ⲋϯⲡⲧⲓⲟⲥ</div>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Discover</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a class="login" href="#">Login</a></li>
+        </ul>
+    </nav>
+</header>
+<div class="section1">
+    <div class="pytext">
+        <span class="discover">Discover</span>
+        <p>Ⲋϯⲡⲧⲓⲟⲥ</p>
+        <span class="pyramids">From the great pyramids</span>
+    </div>
+
+    <img src="https://i.postimg.cc/zXmZJKrH/pyramids12.png" alt="" class="pyramid">
+    <img src="https://i.postimg.cc/y63C4nwz/sun1.png" alt="" class="sun">
+    <img src="https://i.postimg.cc/mgw0NnF7/sun-reflection1.png" alt="" class="sunref1">
+    <img src="https://i.postimg.cc/021FgvYp/sunreflection2.png" alt="" class="sunref2">
+    <img src="https://i.postimg.cc/bJFCFcz2/cloud1.png" alt="" class="cloud1">
+    <img src="https://i.postimg.cc/bJFCFcz2/cloud1.png" alt="" class="cloud2">
+
+
+
+
+
+</div>
+<div class="section2">
+    <div class="mummytext">
+        <span class="tomb">TO </span>
+        <p>EGYPT</p>
+        <span class="mummy">Deepest mysterious tombs</span>
+    </div>
+
+
+
+    <img src="https://i.postimg.cc/gcZQBjZz/tomb-floor.png" class="floor" alt="">
+    <img src="https://i.postimg.cc/Kc1xcm3w/amood.png" class="amood1" alt="">
+    <img src="https://i.postimg.cc/Kc1xcm3w/amood.png" class="amood2" alt="">
+    <img src="https://i.postimg.cc/ZnGf48vb/fire.png" class="fire" alt="">
+    <img src="https://i.postimg.cc/8Czxybh9/bardy.png" class="bardy" alt="">
+    <img src="https://i.postimg.cc/WbmKTy8x/wall-1.jpg" class="wall1">
+    <img src="https://i.postimg.cc/pdR6mJGy/mmmy.png" class="mummy" alt="">
+    <img src="https://i.postimg.cc/nz65hb6f/taboot.png" class="taboot" alt="">
+
+
+</div>
+<div class="section3">
+    <h1>Parallax effect</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae maxime sed minima qui culpa beatae eos explicabo illo reprehenderit commodi quam, iste veniam! Enim ex mollitia obcaecati sequi ducimus, perspiciatis ipsum cum esse officia omnis consequuntur error beatae molestias commodi necessitatibus dolorem veniam accusantium aspernatur exercitationem impedit maiores. Error sapiente, quibusdam veritatis tenetur non rem deserunt maxime quas aut libero optio ut accusamus temporibus nemo! Quis pariatur consectetur voluptatum ducimus ad placeat, minima sequi facere libero reiciendis tenetur iure quo ex est id eaque perspiciatis facilis. Nesciunt soluta nostrum labore debitis voluptatem, expedita eveniet repellendus aliquid neque quia perferendis id.</p>
+</div>
+
+<script>
+    let egypt =document.querySelector(".section1 .pytext");
+    let egypt2 =document.querySelector(".section2 .mummytext");
+    let sunref1 = document.querySelector(".section1 .sunref1")
+    let sunref2 = document.querySelector(".section1 .sunref2")
+    let cloud1 = document.querySelector(".section1 .cloud1")
+    let cloud2 = document.querySelector(".section1 .cloud2")
+    let hand1 = document.querySelector(".section1 .hand1")
+    let taboot = document.querySelector(".section2 .taboot");
+
+    let move=0;
+
+
+
+
+
+
+
+
+
+
+
+
+    window.addEventListener("scroll",function(){
+        var y = window.scrollY;
+        egypt.style.marginTop = y * 0.5  + "px";
+        cloud1.style.marginRight = y * 1.5 + "px";
+        cloud2.style.marginLeft = y * 1.0 + "px";
+        sunref1.style.marginLeft = y * 0.2 + "px";
+        sunref1.style.marginTop = y *  0.2 + "px";
+
+        sunref2.style.left = ((213 -y * 0.5)<0 ||(184 -y * 0.5)  < 0 ? 213 : (213 -y * 0.5)) +"px";
+        sunref2.style.top = ((213 -y * 0.5) < 0 ||(184 -y * 0.5) < 0 ? 184 : (184 -y * 0.5)) + "px";
+        if(y>=1096){
+            move = -65 + y*0.04;
+            taboot.style.transform ="translateX("+ move +"px)";
+
+        }
+        else{
+            taboot.style.transform ="translateX(-65px)"
+
+
+        }
+        if(y>= 332){
+            egypt2.style.top = -335 + (y * 0.5)  + "px";
+        }
+        console.log(y)
+
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
